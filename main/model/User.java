@@ -1,4 +1,4 @@
-package CRUD_RESTful_Mecanica.model;
+package CRUD_RESTful_Mecanica.main.model;
 
 public class User {
 

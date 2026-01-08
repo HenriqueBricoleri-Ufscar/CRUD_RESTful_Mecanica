@@ -1,4 +1,4 @@
-package CRUD_RESTful_Mecanica.config;
+package CRUD_RESTful_Mecanica.main.config;
 
 import java.io.InputStream;
 import java.sql.DriverManager;

@@ -1,7 +1,7 @@
-package CRUD_RESTful_Mecanica.repository;
+package CRUD_RESTful_Mecanica.main.repository;
 
-import CRUD_RESTful_Mecanica.config.DatabaseConnection;
-import CRUD_RESTful_Mecanica.model.User;
+import CRUD_RESTful_Mecanica.main.config.DatabaseConnection;
+import CRUD_RESTful_Mecanica.main.model.User;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -35,12 +35,35 @@ public class UserRepository {
             stmt.executeUpdate();
 
             ResultSet rs = stmt.getGeneratedKeys();
-
+            if (rs.next()){
+                user.setId(rs.getString(1));
+            }
             return user;
 
         } catch (SQLException e){
             throw new RuntimeException("Failed to save User", e);
         }
+    }
 
+    //Update
+    //Usuário pode mudar apenas seu Nome e Email
+    //As roles são controladas pelo servidor
+    //
+    public User updateUser(User user) {
+        String sql_update = "UPDATE users SET nome = ?, email = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql_update)){
+
+            stmt.setString(1, user.getName());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getId());
+
+            stmt.executeUpdate();
+
+            return user;
+
+        } catch (SQLException e){
+            throw new RuntimeException("Failed to update User", e);
+        }
     }
 }
