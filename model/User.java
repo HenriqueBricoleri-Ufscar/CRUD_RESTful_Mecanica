@@ -1,23 +1,23 @@
 package CRUD_RESTful_Mecanica.model;
 
-public class Users {
+public class User {
 
     public enum Role {
         USER,
         ADMIN;
     }
     
-    private String users_id;
+    private String id;
     private String name;
     private String contact;
     private Role role;
     private String email;
     private String password;
 
-    public Users() {}
+    public User() {}
 
-    public Users(String id, String name, String email, String password, String contact) {
-        this.users_id = id;
+    public User(String id, String name, String email, String password, String contact) {
+        this.id = id;
         this.name = name;
         this.contact = contact;
         this.role = Role.USER;
@@ -27,7 +27,7 @@ public class Users {
 
     //Getters
     public String getId() {
-        return users_id;
+        return id;
     }
 
     public String getName() {
@@ -52,7 +52,7 @@ public class Users {
 
     //Setters
     public void setId(String id) {
-        this.users_id = id;
+        this.id = id;
     }
 
     public void setName(String name) {

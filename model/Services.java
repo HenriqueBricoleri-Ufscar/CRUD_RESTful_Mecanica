@@ -12,27 +12,33 @@ public class Services {
         IN_PROGRESS;
     }
 
+    private String users_id;
     private String service_id;
     private String description;
     private double value;
     private List<String> parts_used;
     private service_Status status;
-    private boolean payment_satus;
-    private Date schuduled_date;
-    private Date delivered_date;
+    private boolean paymentStatus;
+    private Date schuduledDate;
+    private Date deliveredDate;
 
     public Services () {}
 
     public Services(String service_id, String description, double value, List<String> parts_used, service_Status status,
-                    boolean payment_satus, Date schuduled_date, Date delivered_date) {
+                    String users_id, boolean payment_satus, Date schuduled_date, Date delivered_date) {
+        this.users_id = users_id;
         this.service_id = service_id;
         this.description = description;
         this.value = value;
         this.parts_used = parts_used;
         this.status = status;
-        this.payment_satus = payment_satus;
-        this.schuduled_date = schuduled_date;
-        this.delivered_date = delivered_date;
+        this.paymentStatus = payment_satus;
+        this.schuduledDate = schuduled_date;
+        this.deliveredDate = delivered_date;
+    }
+
+    public String getUsers_id() {
+        return users_id;
     }
 
     public String getService_id() {
@@ -55,16 +61,20 @@ public class Services {
         return status;
     }
 
-    public boolean isPayment_satus() {
-        return payment_satus;
+    public boolean Payment_satus() {
+        return paymentStatus;
     }
 
     public Date getSchuduled_date() {
-        return schuduled_date;
+        return schuduledDate;
     }
 
     public Date getDelivered_date() {
-        return delivered_date;
+        return deliveredDate;
+    }
+
+    public void setUsers_id(String users_id) {
+        this.users_id = users_id;
     }
 
     public void setService_id(String service_id) {
@@ -87,15 +97,15 @@ public class Services {
         this.status = status;
     }
 
-    public void setPayment_satus(boolean payment_satus) {
-        this.payment_satus = payment_satus;
+    public void setPayment_satus(boolean payment_status) {
+        this.paymentStatus = payment_status;
     }
 
     public void setSchuduled_date(Date schuduled_date) {
-        this.schuduled_date = schuduled_date;
+        this.schuduledDate = schuduled_date;
     }
 
     public void setDelivered_date(Date delivered_date) {
-        this.delivered_date = delivered_date;
+        this.deliveredDate = delivered_date;
     }
 }
