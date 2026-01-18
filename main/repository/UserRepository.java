@@ -47,7 +47,7 @@ public class UserRepository {
     //Usuário pode mudar apenas seu Nome e Email
     //As roles são controladas pelo servidor
     public User updateUser(User user) {
-        String sql_update = "UPDATE users SET nome = ?, email = ? WHERE id = ?";
+        String sql_update = "UPDATE users SET name = ?, email = ? WHERE id = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql_update)){
 

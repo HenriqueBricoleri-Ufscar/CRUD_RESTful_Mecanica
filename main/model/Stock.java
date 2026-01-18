@@ -3,14 +3,16 @@ package CRUD_RESTful_Mecanica.main.model;
 public class Stock {
     
     private String id;
-    private String nome;
+    private String name;
     private int quantity;
     private String car_model;
     private int car_year;
 
-    public Stock(String id, String nome, int quantity, String car_model, int car_year) {
+    public Stock() {}
+
+    public Stock(String id, String name, int quantity, String car_model, int car_year) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.quantity = quantity;
         this.car_model = car_model;
         this.car_year = car_year;
@@ -20,8 +22,8 @@ public class Stock {
         return id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public int getQuantity() {
@@ -40,8 +42,8 @@ public class Stock {
         this.id = id;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setQuantity(int quantity) {

@@ -12,6 +12,7 @@ public class DatabaseConnection {
 
     //Construtor que passa os dados do db (url, user e senha) para o arquivo do projeto
     //Utilizado apenas dentro da própria classe
+    //Singleton
     private DatabaseConnection(){
         try{
             Properties props = new Properties();
